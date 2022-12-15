@@ -20,21 +20,21 @@ DATASET_PATH = os.path.join(os.getcwd(), 'dataset')
 train_df = pd.read_csv(os.path.join(DATASET_PATH, 'cases_malaysia_train.csv'))
 
 # %% 2. Data inspection
-train_df.info() # cases_new column is an object type which needs to be convert to int type
+train_df.info()  # cases_new column is an object type which needs to be convert to int type
 train_df.describe()
 
-train_df.isna().sum() # the inital assesment shows no NaN in the cases column but cases_new column needs to be check again after it had been converted into int
-train_df.duplicated().sum() # no duplicates
+train_df.isna().sum()  # inital assesment shows no NaN in the cases column but cases_new column needs to be check again after it had been converted into int
+train_df.duplicated().sum()  # no duplicates
 
 # %% 3. Data cleaning
 # Convert cases_new column to int
 train_df['cases_new'] = pd.to_numeric(train_df['cases_new'], errors='coerce')
-train_df['cases_new'].isna().sum() # 12 NaN values in new_cases
+train_df['cases_new'].isna().sum()  # 12 NaN values in new_cases
 
 # Fill NaN values in cases_new column with interpolation
 train_df['cases_new'] = train_df['cases_new'].interpolate(method='polynomial', order=2).astype(np.int64)
-train_df['cases_new'].isna().sum() # no more NaN values
-train_df['cases_new'].dtype # cases_new column is now an dtype int
+train_df['cases_new'].isna().sum()  # no more NaN values
+train_df['cases_new'].dtype  # cases_new column is now an dtype int
 
 # Plot cases_new column to visualize the data's pattern
 plt.figure()
@@ -100,7 +100,8 @@ reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr
 EPOCHS = 10
 BATCH_SIZE = 64
 
-history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=EPOCHS, batch_size=BATCH_SIZE, callbacks=[tb, es, reduce_lr])
+history = model.fit(X_train, y_train, validation_data=(X_test, y_test),
+                    epochs=EPOCHS, batch_size=BATCH_SIZE, callbacks=[tb, es, reduce_lr])
 
 # %% Model evaluation
 # Load test data
@@ -108,8 +109,8 @@ test_df = pd.read_csv(os.path.join(DATASET_PATH, 'cases_malaysia_test.csv'))
 
 # Inspect the test dataset
 test_df.info() # cases_new column is a float dtype which needs to be convert to int
-test_df.isna().sum() # there is 1 NaN values which needs to be fill in
-test_df.duplicated().sum() # no duplicates
+test_df.isna().sum()  # there is 1 NaN values which needs to be fill in
+test_df.duplicated().sum()  # no duplicates
 
 # Plot the cases_new column to visualize the trend
 plt.figure()
@@ -124,8 +125,8 @@ test_data = test_df['cases_new']
 
 # Fill the NaN values with interpolation
 test_data = test_data.interpolate(method='polynomial', order=2).astype(np.int64)
-test_data.isna().sum() # There is no more NaN values
-test_data.dtype # Test data dtype is now int
+test_data.isna().sum()  # There is no more NaN values
+test_data.dtype  # Test data dtype is now int
 
 # Visualize the test data after it had been filled
 plt.figure()
