@@ -73,9 +73,6 @@ The RNN model is build using LSTM layers which allows it to remember past input 
   Mean absolute error (MAE) and mean absolute percentage error (MAPE) for the model prediction.
 </p>  
 
-## Future Improvement
-> 
-
 ## Acknowledgement
 
 The dataset is obtained from [MoH-Malaysia](https://github.com/MoH-Malaysia/covid19-public) covid19-public repository.
