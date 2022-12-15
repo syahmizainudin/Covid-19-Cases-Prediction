@@ -18,7 +18,12 @@ The RNN model is build using LSTM layers which allows it to remember past input 
 ### Step 2 - Data inspection  
 
 > During data inspection, the detail of the dataset is examine and understood. The 'cases_new' column in the dataset is found to be of the 'object' dtype when it is supposed to be a column of integers for the amount of new cases. The dataset is checked for any NaN values or duplicates. The dataset does not have any duplicates but do have some NaN values which needed to be filled up.
-  
+
+<p align="center">
+  <img src="resources/new_covid_19_cases_plot.png" height=400/>
+</p>  
+<p align='center'>Daily new Covid-19 cases in Malaysia.</p>
+
 ### Step 3 - Data cleaning  
 
 > The 'cases_new' column is converted to integers using 'to_numeric' function from pandas. The NaN values are filled up using polynormial interpolation and further inspection confirmed that the data is now free from any NaN values.
@@ -34,10 +39,15 @@ The RNN model is build using LSTM layers which allows it to remember past input 
 ### Step 6 - Model development  
 
 > A model focused on the 2 layers of LSTM with 64 nodes each is build as the hidden layer. The data processed in the previous step is then fit into the model and the model is trained for 10 epochs. The training process of the model is monitored through TensoBoard.
-  
+
+<p align="center">
+  <img src="resources/training_loss.png" width=1000/>
+</p> 
+<p align='center'>Loss change during the model training.</p> 
+
 ### Step 7 - Model evaluation  
 
-> The evaluation of the model is made wih the MAPE metrics in which the model scored between 0.16% until 0.20% between test run. The detailed results of the model is displayed in the [Visualization](#visualization) section below.
+> The evaluation of the model is made with the MAPE metrics in which the model scored between 0.16% until 0.20% of errors value between test run. The detailed results of the model is displayed in the [Visualization](#visualization) section below.
 
 ### Step 8 - Model saving
 
@@ -45,22 +55,11 @@ The RNN model is build using LSTM layers which allows it to remember past input 
   
 ## Visualization
 
-<p align="center">
-  <img src="resources/new_covid_19_cases_plot.png" height=400/>
-</p>  
-<p align='center'>Daily new Covid-19 cases in Malaysia.</p>
-  
 <p><br></p>
 <p align="center">
   <img src="resources/model_architecture.png" width=300/>
 </p>  
 <p align='center'>Architecture for model used in the project.</p>
-
-<p><br></p>
-<p align="center">
-  <img src="resources/training_loss.png" width=1000/>
-</p>  
-<p align='center'>Loss change during the model training.</p>
 
 <p><br></p>
 <p align="center">
