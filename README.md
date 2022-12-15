@@ -20,9 +20,9 @@ The RNN model is build using LSTM layers which allows it to remember past input 
 > During data inspection, the detail of the dataset is examine and understood. The 'cases_new' column in the dataset is found to be of the 'object' dtype when it is supposed to be a column of integers for the amount of new cases. The dataset is checked for any NaN values or duplicates. The dataset does not have any duplicates but do have some NaN values which needed to be filled up.
 
 <p align="center">
-  <img src="resources/new_covid_19_cases_plot.png" height=400/>
+  <img src="resources/new_covid_19_cases_plot.png" height=400/><br>
+  Daily new Covid-19 cases in Malaysia from January 2020 until December 2021.
 </p>  
-<p align='center'>Daily new Covid-19 cases in Malaysia.</p>
 
 ### Step 3 - Data cleaning  
 
@@ -41,9 +41,9 @@ The RNN model is build using LSTM layers which allows it to remember past input 
 > A model focused on the 2 layers of LSTM with 64 nodes each is build as the hidden layer. The data processed in the previous step is then fit into the model and the model is trained for 10 epochs. The training process of the model is monitored through TensoBoard.
 
 <p align="center">
-  <img src="resources/training_loss.png" width=1000/>
+  <img src="resources/training_loss.png" width=1000/><br>
+  Loss change during the model training.
 </p> 
-<p align='center'>Loss change during the model training.</p> 
 
 ### Step 7 - Model evaluation  
 
@@ -57,23 +57,25 @@ The RNN model is build using LSTM layers which allows it to remember past input 
 
 <p><br></p>
 <p align="center">
-  <img src="resources/model_architecture.png" width=300/>
+  <img src="resources/model_architecture.png" width=300/><br>
+  Architecture for the model used in the project.
 </p>  
-<p align='center'>Architecture for model used in the project.</p>
 
 <p><br></p>
 <p align="center">
-  <img src="resources/predicted_case_againts_actual_case.png" width=500/>
+  <img src="resources/predicted_case_againts_actual_case.png" width=500/><br>
+  Prediction made by the model againts the ground truth.
 </p>  
-<p align='center'>Prediction made by the model againts the ground truth.</p>
 
 <p><br></p>
 <p align="center">
-  <img src="resources/metrics.png" width=300" />
+  <img src="resources/metrics.png" width=300" /><br>
+  Mean absolute error (MAE) and mean absolute percentage error (MAPE) for the model prediction.
 </p>  
-<p align='center'>Mean absolute error (MAE) and mean absolute percentage error (MAPE) for the model prediction.</p>
+
+## Future Improvement
+> 
 
 ## Acknowledgement
 
 The dataset is obtained from [MoH-Malaysia](https://github.com/MoH-Malaysia/covid19-public) covid19-public repository.
-
