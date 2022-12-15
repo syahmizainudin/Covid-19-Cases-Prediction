@@ -38,11 +38,11 @@ The RNN model is build using LSTM layers which allows it to remember past input 
 
 ### Step 6 - Model development  
 
-> A model focused on the 2 layers of LSTM with 64 nodes each is build as the hidden layer. The data processed in the previous step is then fit into the model and the model is trained for 10 epochs. The training process of the model is monitored through TensoBoard.
+> A model focused on the 2 layers of LSTM with 64 nodes each is build as the hidden layer. The data processed in the previous step is then fit into the model and the model is trained for 10 epochs. The training process of the model is monitored through TensorBoard.
 
 <p align="center">
   <img src="resources/training_loss.png" width=1000/><br>
-  Loss change during the model training.
+  Loss change during the model training with the light blue line being the training and the pink line being the validation.
 </p> 
 
 ### Step 7 - Model evaluation  
