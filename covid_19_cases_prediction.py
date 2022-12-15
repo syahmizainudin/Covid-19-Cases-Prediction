@@ -1,4 +1,10 @@
 # %%
+import os
+import datetime
+import pickle
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 from tensorflow import keras
 from keras import Sequential
 from keras.layers import LSTM, Dense, Dropout
@@ -7,10 +13,6 @@ from keras.callbacks import EarlyStopping, TensorBoard, ReduceLROnPlateau
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_percentage_error, mean_absolute_error
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-import os, datetime, pickle
 
 # %% 1. Data loading
 DATASET_PATH = os.path.join(os.getcwd(), 'dataset')
