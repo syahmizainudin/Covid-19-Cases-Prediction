@@ -7,7 +7,7 @@
 
 The project is made to analyse daily updates of new Covid-19 cases in Malaysia through the use of the dataset released by [MoH-Malaysia](https://github.com/MoH-Malaysia/covid19-public). The data is then used to train an RNN model which are then able to make prediction on the future amount of new Covid-19 daily cases. 
 
-The RNN model is build using LSTM layers which allows it to remember past input and using it together with the present input to make adjustments to the weight. This is made possible through the use of a memories highway which also allows it to avoid a vanishing gradient problem. The model is made up of 2 layers of LSTM with 64 nodes each. The model managed to score an average of 0.17% in mean average percentage error (MAPE) and is able to adequately predict the pattern and trend for the test data given.
+The RNN model is build using LSTM layers which allows it to remember past input and using it together with the present input to make adjustments to the weight. This is made possible through the use of a memories highway which also allows it to avoid a vanishing gradient problem. The model is made up of 2 layers of LSTM with 64 nodes each. The model managed to score an average of 0.17% in mean average percentage error (MAPE) and is able to adequately predict the pattern and trend for the test data given. The detailed result and prediction made by the model is shown in the [Visualization](#visualization) section.
 
 ## Steps Taken
 
